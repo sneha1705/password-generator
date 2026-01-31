@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Password Generator</title>
+<link rel="Stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container" id="box">
+    <div class="toggle" onclick="toggleMode()">🌙 Toggle Dark Mode</div>
+    <h2>Advanced Password Generator</h2>
+
+    <div class="output">
+        <input type="password" id="password" readonly>
+        <button onclick="copyPassword()">Copy</button>
+        <button onclick="toggleShow()">👁️</button>
+    </div>
+
+    <label>Password Length: <span id="lenVal">12</span></label>
+    <input type="range" min="4" max="25" value="12" id="length" oninput="lenVal.innerText=this.value">
+
+    <div class="settings">
+        <label><input type="checkbox" id="upper" checked> Uppercase</label>
+        <label><input type="checkbox" id="lower" checked> Lowercase</label>
+        <label><input type="checkbox" id="num" checked> Numbers</label>
+        <label><input type="checkbox" id="sym"> Symbols</label>
+        <label><input type="checkbox" id="norepeat"> No Repeated Characters</label>
+        <label><input type="checkbox" id="exclude"> Exclude Similar (O,0,l,1)</label>
+    </div>
+
+    <button class="btn" onclick="generatePassword()">Generate Password</button>
+
+    <div id="strengthText" style="margin-top: 10px; font-weight: bold;"> </div>
+    
+</div>
+
+<script src="script.js"> </script>
+
+</body>
+</html>
